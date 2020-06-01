@@ -1,0 +1,161 @@
+// COLORS
+ $color-white: #fff;
+ $color-black: #000;
+ $color-grey: #777;
+ $color-grey-light: #eee;
+ //$color-grey-dark: #21201E;
+ $color-primary-dark: #e4854e;
+ $color-primary-light: #fccb90;
+
+
+// UTILITIES
+.container {
+  max-width: 114rem; //1140px when there is not enough space it will take up 100%
+  margin: 0 auto; 
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+} 
+.u-center-text { text-align: center !important; }
+//.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-medium { margin-top: 6rem !important; }
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+.u-margin-bottom-big { margin-bottom: 8rem !important; }
+.u-margin-left { margin-left: 3rem; }
+
+// GUTTERS 
+$gutter-big: 8rem;
+
+// BUTTONS
+.btn-text {
+  &:link, &:visited {
+    font-size: 1.6rem;
+    color: $color-primary-dark;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary-dark;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &:active{
+    box-shadow: 0 1rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s; /* all effects on hover, on active etc*/
+    position: relative;
+    font-size: 1.6rem;
+
+    // // Change for the <button> element
+    // border: none;
+    // cursor: pointer;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2); /* x y blur color*/
+  }
+  
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+
+  &--primary {
+    background-color: $color-primary-dark;
+    color: $color-white;
+  }
+
+}
+
+
+
+// NORMALIZE
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+  scroll-behavior: smooth;
+
+  @include respond(tab-land) { //width < 1200px?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) { //width < 900px?
+    font-size: 50%;// 1rem = 8px, 8/16 = 50%
+  }
+  
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+  
+}
+
+body {
+  color: $color-grey;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $color-primary-dark;
+  color: $color-white;
+  
+}
+
+// ANIMATIONS
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -20,10 +20,7 @@ const slideInMenu = () =>{
   }
   navIcon.addEventListener('click', openNav);
   
-  navigation.addEventListener('click', () => {
-    navigation.classList.toggle('nav-active');
-    navIcon.classList.toggle('toggle');
-  });
+  navigation.addEventListener('click', openNav);
 }
 
 

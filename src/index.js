@@ -1,4 +1,4 @@
-import '../style/main.scss';
+import './sass/main.scss';
 import Transition from './transition';
 import slideInMenu from './slideInMenu';
 import animatedContentBox from './slideInImg';

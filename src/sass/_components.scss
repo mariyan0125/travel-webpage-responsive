@@ -62,9 +62,15 @@
 
 // NAVIGATION RESPONSIVE
 @include respond(tab-port){
-  body {
+  
+  html {
     overflow-x: hidden;
   }
+  body {
+    overflow-x: hidden;
+    position:relative;
+  }
+  
   .navigation__list {
     position: absolute;
     right: 0;
